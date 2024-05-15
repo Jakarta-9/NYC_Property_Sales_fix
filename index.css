@@ -1,0 +1,296 @@
+html {
+    width: 100%;
+    height: 100%;
+
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .title-navbar{
+    font-weight: 600;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 36px;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .title-navbar-2{
+    font-weight: 600;
+    font-size: 2rem;
+    text-shadow:  0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin-bottom: 2.25rem;
+    align-items: center;
+    display: flex; /* Menggunakan flexbox */
+  }
+  .profile-button{
+    background-color: #E1ACAC;
+    display: inline;
+    padding: 0.5rem 1.25rem;
+    border-radius: 1.5rem;
+    margin-top: 0.625rem;
+    margin-bottom:  0.625rem;
+    cursor: pointer;
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+  }
+  .profile-button:hover {
+    background-color: antiquewhite; /* Ubah warna background ketika kursor menunjuk */
+  }
+  .profile-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Tengahkan elemen dalam kolom */
+    z-index: 1;
+    margin: 0.625rem auto 1.25rem; /* Auto margin kiri dan kanan untuk menengahkan */
+  }
+  .profile-title{
+    text-align: center;
+  }
+  .video-background{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+  .profile-icon{
+    display: flex;
+    margin-top: 6.25rem;
+    justify-content: center;
+    border: 1rem solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 1rem solid #FFEAE3;
+    border-right: 1rem solid #FFCBCB;
+    border-bottom: 1rem solid #FFE4CF;
+    border-left: 1rem solid #FFFDD7;
+    width: 7.5rem;
+    height: 7.5rem;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+header {
+    background-color: #A87676; /* Warna latar belakang untuk header */
+    padding: 20px;
+    text-align: center;
+}
+  header:hover{
+    background-color: rgb(149, 102, 102);
+  }
+  section {
+  background-color: #CA8787; /* Warna latar belakang untuk section */
+    padding: 20px;
+    text-align: center
+  }
+  section:hover{
+    background-color: rgb(189, 141, 141);
+  }
+  footer {
+    background-color: #E1ACAC;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Style the dropdown button */
+  .dropbtn {
+    background-color: antiquewhite;
+    color: #A87676;
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid black; /* Menambahkan border dengan warna hitam */
+    border-radius: 2px;
+    cursor: pointer;
+    float: right;
+  }
+  .dropbtn:hover {
+    background-color: rgb(225, 216, 216);
+  }
+  .dropbtn1 {
+    background-color: rgb(250, 235, 215);
+    color: #A87676;
+    padding: 7px;
+    font-size: 16px;
+    border: 1px solid black; /* Menambahkan border dengan warna hitam */
+    border-radius: 2px;
+    cursor: pointer;
+    float: right;
+  }
+  .dropbtn1:hover {
+    background-color: rgb(225, 216, 216);
+  }
+  
+  /* Dropdown container */
+  .dropdown {
+    background-color: antiquewhite;
+    position: relative;
+    display: inline-block;
+    float: right;
+    border: 1px solid black; /* Menambahkan border dengan warna hitam */
+    border-radius: 2px;
+    margin-left: 30rem;
+    align-items: end;
+  }
+  .dropdown1 {
+    background-color: antiquewhite;
+    position: relative;
+    display: inline-block;
+    float: right;
+    border: 1px solid black; /* Menambahkan border dengan warna hitam */
+    border-radius: 2px;
+    align-items: end;
+  }
+  .button {
+    position: relative;
+    display: inline-block;
+    float: right;
+    border: 1px solid black; /* Menambahkan border dengan warna hitam */
+    border-radius: 2px;
+    align-items: end;
+    background-color: #FFD0D0;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right:2rem;
+    padding-left: 2rem;
+  }
+  .button:hover {
+    background-color: rgb(250, 185, 185);
+  }
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 8px;
+    top: 40px; /* Adjust the top position */
+    left: 0; /* Adjust the left position */
+  }
+  /* Dropdown content (hidden by default) */
+  .dropdown-content1 {
+    display:none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 8px;
+    top: 40px; /* Adjust the top position */
+    left: 0; /* Adjust the left position */
+  }
+  /* Style checkboxes */
+  .dropdown-content input[type="checkbox"] {
+    margin-right: 8px; /* Add some space between checkbox and text */
+  }
+  .dropdown-content1 input[type="checkbox"] {
+    margin-right: 8px; /* Add some space between checkbox and text */
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  /* Show the dropdown menu on hover */
+  .dropdown1:hover .dropdown-content1 {
+    display: block;
+  }
+  
+  /* Style labels */
+  .dropdown-content label {
+    display: block;
+    margin-bottom: 8px; /* Add some space between options */
+  }
+  
+  .dropdown-content1 label {
+    display: block;
+    margin-bottom: 8px; /* Add some space between options */
+  }
+  .custom-column {
+    text-align: center; /* Memposisikan teks ke tengah */
+    font-weight: bold; /* Membuat huruf tebal */
+    font-size:larger;
+  }
+  .custom-bg {
+    background-color: bisque;
+  }
+  .custom-bg:hover {
+    background-color: rgb(211, 137, 137);
+  }
+  .custom-p {
+    background-color: rgb(255, 208, 208);
+    font-weight: bold; /* Membuat huruf tebal */
+    font-size:larger;
+  }
+  .custom-p:hover {
+    background-color: rgb(195, 148, 148);
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+    
+  .col-md-5 {
+    background-color: antiquewhite;
+    margin: 10px; /* Untuk memberikan jarak antar elemen */
+    text-align: center; /* Memastikan konten berada di tengah */
+  }
+  
+  .profile-title {
+    background-color: #FFD0D0;
+    padding: 1%;
+    margin: 5%;
+    text-align: center;
+    color: white;
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+  }
+  .profile-title:hover{
+    background-color: #CA8787;
+  }
+  .profile {
+    max-width: 300px; /* Sesuaikan dengan kebutuhan */
+    display: inline-block; /* Agar elemen berada di tengah */
+  }
+  .profile img {
+    width: 20rem; /* Ubah nilai sesuai dengan kebutuhan */
+    height: 20rem; /* Tinggi gambar akan sama dengan lebarnya */
+  }
+  #data-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #data-table th, #data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #data-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  

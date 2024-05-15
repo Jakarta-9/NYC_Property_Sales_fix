@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Capstone Project Team 9</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo"></script>     <!-- maps chart -->
+    <script src="./index.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/mapnavigation.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="profile-image">
+                <img class="profile-icon" loading="lazy" alt="" src="./img/logo9.png"/>
+                <div class="profile-title">
+                    <div class="title-navbar"><p>NYC Property Sales</p></div>
+                    <div class="title-navbar-2"><p>Sales Trends Properties for sale by borough in New York City during the 12 month period from September 2016 to September 2017.</p></div>
+                    <!-- <div class="profile-button">About Us</div> -->
+                    <button id="about-us-btn" class="profile-button">About Us</button>
+                    <!-- <script>
+                        function scrollToRow() {
+                            var paragraph = document.querySelector('.about us');
+                            paragraph.scrollIntoView({ behavior: 'smooth' });
+                        }                    
+                    </script>  -->
+                </div>
+            </div>
+     </div>
+
+        <div class="container p-4 my-4 bg-white border">
+                <div class="navbar">
+                    <h1>NYC PROPERTY SALES</h1>
+                    <div class="dropdown">
+                        <button class="dropbtn">Date
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                        <label><input type="checkbox">Aug,2017</label>
+                        <label><input type="checkbox">Jul,2017</label>
+                        <label><input type="checkbox">Jun,2017</label>
+                        <label><input type="checkbox">May,2017</label>
+                        <label><input type="checkbox">Apr,2017</label>
+                        <label><input type="checkbox">Mar,2017</label>
+                        <label><input type="checkbox">Feb,2017</label>
+                        <label><input type="checkbox">Jan,2017</label>
+                        <label><input type="checkbox">Dec,2016</label>
+                        <label><input type="checkbox">Nov,2016</label>
+                        <label><input type="checkbox">Oct,2016</label>
+                        <label><input type="checkbox">Sep,2016</label>
+                        </div>
+                    </div>
+                    <div class="dropdown1">
+                        <button class="dropbtn1">Borough
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content1">
+                            <label><input type="checkbox">Bronx</label>
+                            <label><input type="checkbox">Brookyln</label>
+                            <label><input type="checkbox">Manhattan</label>
+                            <label><input type="checkbox">Queens</label>
+                            <label><input type="checkbox">State Island</label>
+                        </div>
+                    </div>
+                    <button class="button">Filter</button>  
+                </div>
+        </div>
+    </header>
+    <section>
+    <div class="container p-4 my-4 bg-white text-white border">
+        <div class="row">
+            <div class="col-sm-3 custom-column">
+                <div class="p-3 text-dark custom-bg border rounded">
+                    <h1>5</h1>
+                    <p>Borough</p>
+                </div>
+            </div>
+            <div class="col-sm-3 custom-column">
+                <div class="p-3 text-dark custom-bg border rounded">
+                    <h1>89,3M</h1>
+                    <p>Sale Price</p>
+                </div>
+            </div>
+            <div class="col-sm-3 custom-column">
+                <div class="p-3 text-dark custom-bg border rounded">
+                    <h1>31.8M</h1>
+                    <p>LOT</p>
+                </div>
+            </div>
+            <div class="col-sm-3 custom-column">
+                <div class="p-3 text-dark custom-bg border rounded">
+                    <h1>190.163</h1>
+                    <p>Total Units (m<sup>2</sup>)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- statistic -->
+    <div class="container p-5 my-5 bg-white text-black border custom-p">
+        <p>Sales Trend by Borough</p>
+        <div>
+            <canvas id="myChart" style="width:100%;max-width:600rem"></canvas>
+        </div> 
+    </div>
+    <!-- chart1 -->
+    <div class="container p-5 my-5 bg-white text-black border custom-p">
+        <p>Sales Trend</p>
+        <div>
+            <canvas id="barChart" style="width:100%;max-width:600rem"></canvas>
+        </div> 
+    </div>
+    <!-- chart2 -->
+    <div class="container p-5 my-5 bg-white text-black border custom-p">
+        <p>Unit Trend by Residential Type</p>
+        <div>
+            <canvas id="barChart2" style="width:100%;max-width:600rem"></canvas>
+        </div> 
+    </div>
+    <!-- chart 3 -->
+    <div class="container p-5 my-5 bg-white text-black border custom-p">
+        <div class="row">
+            <div class="col-md-6">
+                <p>Unit Trend by Residential Units</p>
+                <canvas id="doughnutChart1" style="width:100%;max-width:40rem;"></canvas>
+            </div>
+            <div class="col-md-6">
+                <p>Unit Trend by Commercial Units</p>
+                <canvas id="doughnutChart2" style="width:100%;max-width:40rem;"></canvas>
+            </div>
+        </div>
+    </div>    
+  <!-- tabel data -->
+
+    <div class="container p-5 my-5 bg-white text-black border custom-p">
+        <p>Tabel Data</p>
+        <div class="data tabel" id="table-container">
+            <table id="data-table" class="table table-striped">
+                <!-- Tabel akan ditampilkan di sini -->
+            </table>
+            <ul id="page-numbers" class="pagination justify-content-center mt-4">
+                <!-- Angka halaman akan ditampilkan di sini -->
+            </ul>
+        </div>
+    </div>
+    </section>
+
+    <footer>
+    <div class="container p-5 my-5 border custom-p text-center">
+        <h1 class="about-us" id="about-us">OUR GREAT TEAMS</h1>
+        <p>Introduce Our Self - TEAM 9</p>
+        <div class="row ">
+            <div class="col-md-5 ">
+                <div class="profile">
+                    <img src="./img/aufa-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Aufa Edith Ramdani</p>
+                        <p>Project Leader</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/naomi-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Dameria Naomi Simatupang</p>
+                        <p>Front End Engineer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/isma-removebg-preview (1).png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Lismala</p>
+                        <p>Front End Engineer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/tomi-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Tomi Wijaya</p>
+                        <p>Front End Engineer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/rangga2-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Rangga Rizky Pratama</p>
+                        <p>Deployment Team</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/Disti-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Distia Isma Nadhifah</p>
+                        <p>Pitch Deck Team</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/fauzia-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Fauzia Rahmah</p>
+                        <p>Pitch Deck Team</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/Afida-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Afida Nurul Yasmin</p>
+                        <p>Quality Assurance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/brian-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Brian Sanjaya</p>
+                        <p>Quality Assurance</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="profile">
+                    <img src="./img/vina__1_-removebg-preview.png" alt="" style="border-radius:50%;">
+                    <div class="profile-title">
+                        <p>Vina Nur Titisari</p>
+                        <p>Quality Assurance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </footer>
+    <script>
+        document.getElementById('about-us-btn').addEventListener('click', function() {
+            var aboutUsSection = document.getElementById('about-us');
+            aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
